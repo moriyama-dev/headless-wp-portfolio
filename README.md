@@ -1,39 +1,30 @@
-# Headless WordPress + Next.js Portfolio Site
+# headless-wp-portfolio
 
-A portfolio website built with **WordPress as a headless CMS** backend and **Next.js + Vercel** on the front end. This project solves the "no portfolio URL" problem while simultaneously demonstrating skills in WordPress, React/Next.js, and GraphQL to employers.
+My personal portfolio site. WordPress runs as the CMS backend, Next.js handles the frontend, deployed on Vercel.
 
-## ✨ Features
+I already had WordPress set up for client work, so using it as a headless CMS made more sense than spinning up a separate backend. WPGraphQL exposes the content, Next.js fetches it at build time via SSG.
 
-- WordPress backend exposed via **WPGraphQL** (REST + GraphQL endpoints)
-- Custom post type `portfolio_item` for managing projects
-- Custom fields (ACF) for rich project metadata
-- Next.js **App Router** with TypeScript
-- **SSG (Static Site Generation)** — data fetched from WordPress at build time
-- Modern UI with **Tailwind CSS / shadcn/ui**
-- Image optimization with `next/image`
-- SEO-ready (Open Graph tags, sitemap)
-- Auto-deploy to **Vercel** via GitHub Actions
-- Custom domain support
+**Live site**: coming soon
 
-## 🛠 Tech Stack
+## Stack
 
-| Layer | Technology |
-|-------|-----------|
-| CMS / Backend | WordPress + WPGraphQL |
-| Frontend | Next.js 14, React, TypeScript |
-| Styling | Tailwind CSS |
-| Data Fetching | GraphQL (SSG) |
-| Deployment | Vercel |
-| CI/CD | GitHub Actions |
+- WordPress + WPGraphQL (backend / CMS)
+- Next.js 14, TypeScript, App Router (frontend)
+- Tailwind CSS
+- Vercel (hosting)
 
-## 🚀 Getting Started
+## What's in here
 
-### Prerequisites
+- Custom post type `portfolio_item` for projects
+- ACF fields for project metadata
+- GraphQL queries for SSG data fetching
+- `next/image` for image optimization
+- OG tags and basic SEO setup
+- GitHub Actions → Vercel auto-deploy
 
-- Node.js 18+
-- A running WordPress installation with **WPGraphQL** plugin activated
+## Setup
 
-### Installation
+You'll need a WordPress install with the WPGraphQL plugin activated.
 
 ```bash
 git clone https://github.com/YOSHl/headless-wp-portfolio.git
@@ -41,69 +32,45 @@ cd headless-wp-portfolio
 npm install
 ```
 
-Create a `.env.local` file:
+Create `.env.local`:
 
 ```env
 NEXT_PUBLIC_WORDPRESS_API_URL=https://your-wordpress-site.com/graphql
 ```
 
-Run the development server:
-
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Build
-
-```bash
-npm run build
-```
-
-## 📁 Project Structure
+## Project structure
 
 ```
-headless-wp-portfolio/
-├── app/                  # Next.js App Router
-│   ├── page.tsx          # Home / portfolio list
-│   └── projects/[slug]/  # Dynamic project detail pages
-├── components/           # Reusable UI components
-├── lib/
-│   └── graphql/          # GraphQL queries
-└── public/               # Static assets
+app/
+  page.tsx              # portfolio list
+  projects/[slug]/      # project detail (dynamic route)
+components/
+lib/
+  graphql/              # GraphQL queries
 ```
-
-## 🔑 Keywords
-
-`WordPress` · `Next.js` · `React` · `TypeScript` · `WPGraphQL` · `GraphQL` · `Vercel` · `Headless CMS` · `SSG` · `ISR`
-
-## 👨‍💻 Development
-
-This project was developed with **Claude Code** (Anthropic). AI-assisted development was used throughout to accelerate scaffolding, GraphQL query design, and component implementation.
 
 ---
 
 ## 日本語
 
-WordPressをヘッドレスCMS（バックエンド）として使い、Next.js + Vercelでフロントを構築したポートフォリオサイトです。
+自分のポートフォリオサイトです。WordPressをヘッドレスCMSとして使い、Next.jsでフロントを構築しています。
 
-### このプロジェクトについて
-
-「ポートフォリオURLが無い」問題を解決しながら、WordPress・React/Next.js・GraphQLのスキルを同時にアピールする一石三鳥のプロジェクトです。
+クライアント案件でWordPressはもともと使っていたので、ヘッドレス構成にするのが一番手っ取り早い選択でした。WPGraphQLでコンテンツを公開し、Next.jsがビルド時にSSGで取得します。
 
 ### 技術構成
 
-| レイヤー | 技術 |
-|--------|------|
-| CMS / バックエンド | WordPress + WPGraphQL |
-| フロントエンド | Next.js 14、React、TypeScript |
-| スタイリング | Tailwind CSS |
-| データ取得 | GraphQL（SSG）|
-| デプロイ | Vercel |
-| CI/CD | GitHub Actions |
+- WordPress + WPGraphQL（バックエンド / CMS）
+- Next.js 14、TypeScript、App Router（フロントエンド）
+- Tailwind CSS
+- Vercel（ホスティング）
 
 ### セットアップ
+
+WPGraphQLプラグインを有効化したWordPress環境が必要です。
 
 ```bash
 git clone https://github.com/YOSHl/headless-wp-portfolio.git
@@ -117,12 +84,6 @@ npm install
 NEXT_PUBLIC_WORDPRESS_API_URL=https://your-wordpress-site.com/graphql
 ```
 
-開発サーバーを起動：
-
 ```bash
 npm run dev
 ```
-
-### 開発について
-
-このプロジェクトは **Claude Code**（Anthropic）を活用して開発しました。スキャフォールド・GraphQLクエリ設計・コンポーネント実装にAIアシスト開発を採用しています。
