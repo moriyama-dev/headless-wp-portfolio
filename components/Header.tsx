@@ -8,9 +8,8 @@ export default function Header() {
           Takumi
         </Link>
         <nav className="flex gap-6 text-sm text-gray-600">
-          <Link href="/" className="hover:text-gray-900 transition-colors">Posts</Link>
           <a
-            href="https://github.com/YOSHl"
+            href="https://github.com/moriyama-dev/moriyama-dev"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-900 transition-colors"
