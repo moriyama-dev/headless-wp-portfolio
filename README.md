@@ -2,21 +2,18 @@
 
 My personal portfolio site. WordPress runs as the CMS backend, Next.js handles the frontend, deployed on Vercel.
 
-I already had WordPress set up for client work, so using it as a headless CMS made more sense than spinning up a separate backend. WPGraphQL exposes the content, Next.js fetches it at build time via SSG.
-
-**Live site**: coming soon
+**Live site**: https://headless-wp-portfolio.vercel.app/
 
 ## Stack
 
 - WordPress + WPGraphQL (backend / CMS)
-- Next.js 14, TypeScript, App Router (frontend)
+- Next.js 16, TypeScript, App Router (frontend)
 - Tailwind CSS
 - Vercel (hosting)
+- GitHub Actions (CI/CD)
 
 ## What's in here
 
-- Custom post type `portfolio_item` for projects
-- ACF fields for project metadata
 - GraphQL queries for SSG data fetching
 - `next/image` for image optimization
 - OG tags and basic SEO setup
@@ -24,10 +21,8 @@ I already had WordPress set up for client work, so using it as a headless CMS ma
 
 ## Setup
 
-You'll need a WordPress install with the WPGraphQL plugin activated.
-
 ```bash
-git clone https://github.com/YOSHl/headless-wp-portfolio.git
+git clone https://github.com/moriyama-dev/headless-wp-portfolio.git
 cd headless-wp-portfolio
 npm install
 ```
@@ -46,11 +41,13 @@ npm run dev
 
 ```
 app/
-  page.tsx              # portfolio list
-  projects/[slug]/      # project detail (dynamic route)
+  page.tsx              # post list
+  posts/[slug]/         # post detail (dynamic route)
 components/
 lib/
-  graphql/              # GraphQL queries
+  graphql.ts            # GraphQL queries
+.github/workflows/
+  deploy.yml            # CI/CD pipeline
 ```
 
 ---
@@ -59,21 +56,20 @@ lib/
 
 自分のポートフォリオサイトです。WordPressをヘッドレスCMSとして使い、Next.jsでフロントを構築しています。
 
-クライアント案件でWordPressはもともと使っていたので、ヘッドレス構成にするのが一番手っ取り早い選択でした。WPGraphQLでコンテンツを公開し、Next.jsがビルド時にSSGで取得します。
+WPGraphQLでコンテンツを公開し、Next.jsがビルド時にSSGで取得します。
 
 ### 技術構成
 
 - WordPress + WPGraphQL（バックエンド / CMS）
-- Next.js 14、TypeScript、App Router（フロントエンド）
+- Next.js 16、TypeScript、App Router（フロントエンド）
 - Tailwind CSS
 - Vercel（ホスティング）
+- GitHub Actions（CI/CD）
 
 ### セットアップ
 
-WPGraphQLプラグインを有効化したWordPress環境が必要です。
-
 ```bash
-git clone https://github.com/YOSHl/headless-wp-portfolio.git
+git clone https://github.com/moriyama-dev/headless-wp-portfolio.git
 cd headless-wp-portfolio
 npm install
 ```
