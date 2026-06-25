@@ -30,7 +30,7 @@ npm install
 Create `.env.local`:
 
 ```env
-NEXT_PUBLIC_WORDPRESS_API_URL=https://your-wordpress-site.com/graphql
+WORDPRESS_API_URL=https://your-wordpress-site.com/graphql
 ```
 
 ```bash
@@ -77,7 +77,7 @@ npm install
 `.env.local` を作成：
 
 ```env
-NEXT_PUBLIC_WORDPRESS_API_URL=https://your-wordpress-site.com/graphql
+WORDPRESS_API_URL=https://your-wordpress-site.com/graphql
 ```
 
 ```bash
